@@ -1,0 +1,10 @@
+[ req ]
+distinguished_name="req_distinguished_name"
+prompt="no"
+
+[ req_distinguished_name ]
+C="CA"
+ST="Quebec"
+L="Montreal"
+O="Billys"
+CN="example.com"

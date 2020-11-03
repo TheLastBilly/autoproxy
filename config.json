@@ -1,0 +1,9 @@
+{
+    "servers": 
+    [
+        {
+            "path": "nextcloud",
+            "url": "https://www.google.com"
+        }
+    ]
+}
