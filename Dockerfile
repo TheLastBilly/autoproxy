@@ -5,9 +5,14 @@ LABEL maintainer="Jose Ricardo jtmonegro@gmail.com /etc/nginx/conf.d/default.con
 RUN apk add python3 openssl gettext
 
 COPY ./entrypoint.sh /entrypoint.sh
-COPY ./format_nginx_conf.py /format_nginx_conf.py
-COPY ./default.conf.template /default.conf.template
+
+COPY ./autoproxy.py /autoproxy.py
+COPY ./config.json /config.json
+
 COPY ./settings.csr /settings.csr
 COPY ./gen_certs.sh /gen_certs.sh
+
+RUN mkdir /certs
+RUN mkdir /logs
 
 CMD ./entrypoint.sh

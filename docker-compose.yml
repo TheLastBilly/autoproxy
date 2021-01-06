@@ -7,8 +7,7 @@ services:
         volumes: 
             - "./config.json:/config.json"
             - "./certs:/certs"
+            - "./logs:/logs"
         ports:
             - "80:80"
-            - "433:433"
-        env_file: 
-            - "./variables.env"
+            - "443:443"

@@ -1,9 +1,10 @@
 {
+    "domain": "localhost",
     "servers": 
     [
         {
-            "path": "nextcloud",
-            "url": "https://www.google.com"
+            "subdomain": "example",
+            "url": "http://example.com/"
         }
     ]
 }
