@@ -3,10 +3,9 @@
 cd /
 
 if [ ! -f /certs/cert.* ]; then
-    sh /gen_certs.sh
+    sh /genSslCertificates.sh
     cat cert.crt > /certs/cert.crt
     cat cert.key > /certs/cert.key
-    rm cert.key cert.crt
 fi
 
 python3 autoproxy.py

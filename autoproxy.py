@@ -11,8 +11,9 @@ raw_json = []
 with open(CONFIG_FILE_PATH, "r") as fp:
     raw_json = loads(fp.read())
 
+domain = raw_json["domain"]
+
 with open(NGINX_FILE_PATH, "w") as fp:
-    domain = raw_json["domain"]
 
     for entry in raw_json["servers"]:
         subdomain = entry["subdomain"]

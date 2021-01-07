@@ -3,8 +3,8 @@
     "servers": 
     [
         {
-            "subdomain": "example",
-            "url": "http://example.com/"
+            "subdomain": "mypage",
+            "url": "http://mypageaddress:8080/"
         }
     ]
 }
