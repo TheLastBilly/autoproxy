@@ -14,15 +14,6 @@ with open(CONFIG_FILE_PATH, "r") as fp:
 with open(NGINX_FILE_PATH, "w") as fp:
     domain = raw_json["domain"]
 
-    fp.write("""server {{
-    listen 80;
-    listen [::]:80;
-    server_name {};
-    
-    return 301 https://$server_name:443$request_uri;
-}}
-""".format(domain))
-
     for entry in raw_json["servers"]:
         subdomain = entry["subdomain"]
         url = entry["url"]
@@ -34,6 +25,14 @@ with open(NGINX_FILE_PATH, "w") as fp:
             os.mkdir(log_dir)
 
         fp.write("""
+server {{
+    listen 80;
+    listen [::]:80;
+    server_name {0};
+    
+    return 301 https://$server_name:443$request_uri;
+}}
+
 server {{
     listen 443 ssl;
     server_name {0};

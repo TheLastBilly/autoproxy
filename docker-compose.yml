@@ -3,7 +3,7 @@ version: '2'
 services: 
     proxy:
         image: thelastbilly/nginxcontained
-        # build: .
+        build: .
         volumes: 
             - "./config.json:/config.json"
             - "./certs:/certs"
@@ -11,3 +11,4 @@ services:
         ports:
             - "80:80"
             - "443:443"
+        restart: always
