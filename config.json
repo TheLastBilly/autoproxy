@@ -1,10 +1,9 @@
 {
-    "domain": "localhost",
     "servers": 
     [
         {
             "subdomain": "mypage",
-            "url": "http://mypageaddress:8080/"
+            "url": "http://localhost:8080/"
         }
     ]
 }

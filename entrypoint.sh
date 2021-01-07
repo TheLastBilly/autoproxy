@@ -2,7 +2,7 @@
 
 cd /
 
-if [ ! -f /certs/cert.* ]; then
+if [ ! -f /certs/cert.crt ]; then
     sh /genSslCertificates.sh
     cat cert.crt > /certs/cert.crt
     cat cert.key > /certs/cert.key

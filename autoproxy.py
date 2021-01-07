@@ -11,7 +11,7 @@ raw_json = []
 with open(CONFIG_FILE_PATH, "r") as fp:
     raw_json = loads(fp.read())
 
-domain = raw_json["domain"]
+domain = os.environ.get("AUTOPROXY_HOST")
 
 with open(NGINX_FILE_PATH, "w") as fp:
 
