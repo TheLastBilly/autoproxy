@@ -21,6 +21,14 @@ with open(NGINX_FILE_PATH, "w") as fp:
 
         server_name = subdomain+"."+domain
 
+        extras = ""
+        
+        try:
+            for item in entry["extras"]:
+                extras += item + "\n"
+        except Exception as e:
+            pass
+
         log_dir = LOG_ROOT + server_name + "/"
         if not os.path.isdir(log_dir):
             os.mkdir(log_dir)
@@ -53,5 +61,7 @@ server {{
         proxy_pass          {1};
         proxy_read_timeout  90;
     }}
+
+    {3}
 }}
-        """.format(server_name, url, log_dir + "access.log"))
+        """.format(server_name, url, log_dir + "access.log", extras))
